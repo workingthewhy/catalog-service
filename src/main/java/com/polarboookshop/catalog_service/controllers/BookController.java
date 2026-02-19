@@ -27,6 +27,7 @@ public class BookController {
     @PostMapping("/books")
     @ResponseStatus(HttpStatus.CREATED)
     public Book post(@Valid @RequestBody final Book book) {
+        System.out.println(book);
         return bookService.addBookToCatalog(book);
     }
 
