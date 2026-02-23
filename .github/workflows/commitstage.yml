@@ -14,7 +14,7 @@ jobs:
         ports:
           - 5432:5432
         env:
-          POSTGRES_DB: polar_postgres
+          POSTGRES_DB: polardb_catalog
           POSTGRES_USER: user
           POSTGRES_PASSWORD: password
     steps:
