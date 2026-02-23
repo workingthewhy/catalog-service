@@ -24,7 +24,7 @@ public class BookRepositoryJdbcTests {
     @Autowired
     private JdbcAggregateTemplate jdbcAggregateTemplate;
 
-    //@Test
+    @Test
     void findBookByIsbnWhenExisting() {
         var bookIsbn = "1234567891";
         var book = Book.of(bookIsbn, "Title", "Author", 12.90, "publisher");
