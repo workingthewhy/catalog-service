@@ -13,24 +13,14 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>catalog-service</name>
 	<description>A catalog service for polar bookshop</description>
-	<url/>
-	<licenses>
-		<license/>
-	</licenses>
-	<developers>
-		<developer/>
-	</developers>
-	<scm>
-		<connection/>
-		<developerConnection/>
-		<tag/>
-		<url/>
-	</scm>
+
 	<properties>
 		<java.version>17</java.version>
 		<spring-cloud.version>2025.1.0</spring-cloud.version>
 		<testcontainers-version>1.17.3</testcontainers-version>
+
 	</properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -147,6 +137,14 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<image>
+						<name>ghcr.io/workingthewhy/${project.artifactId}</name>
+					</image>
+					<environmentVariables>
+						<BP_JVM_VERSION>17.*</BP_JVM_VERSION>
+					</environmentVariables>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
