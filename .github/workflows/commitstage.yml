@@ -35,6 +35,18 @@ jobs:
         run: |
           chmod +x mvnw
           ./mvnw clean package
+      - name: Install kubectl
+        uses: stefanprodan/kube-tools@v1
+        with:
+          kubectl: 1.24.3
+      - name: Install Kubeconform
+        run: |
+          curl -L https://github.com/yannh/kubeconform/releases/latest/download/kubeconform-linux-amd64.tar.gz \
+          | tar xz
+          sudo mv kubeconform /usr/local/bin/
+
+      - name: Validate Kubernetes manifests
+        run: kubeconform -strict -summary k8s
 
   package:
     name: Package and Publish

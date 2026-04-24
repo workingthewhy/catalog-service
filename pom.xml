@@ -138,9 +138,11 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
+					<!-- remove the <image><name> block for tilt to work properly
 					<image>
 						<name>ghcr.io/workingthewhy/${project.artifactId}</name>
 					</image>
+					-->
 					<environmentVariables>
 						<BP_JVM_VERSION>17.*</BP_JVM_VERSION>
 					</environmentVariables>
